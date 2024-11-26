@@ -11,7 +11,7 @@ const Banner = () => {
       <div className=" bg-opacity-60"></div>
       <div className=" text-neutral-content">
         <div className="md:w-1/2 px-3">
-          <h1 className="mb-5 text-4xl font-bold">Would you like a Cup of Delicious Coffee?</h1>
+          <h1 className="mb-5 text-2xl md:text-4xl font-bold">Would you like a Cup of Delicious Coffee?</h1>
           <p className="mb-5">
           It's coffee time - Sip & Savor - Relaxation in every sip! Get the nostalgia back!! Your companion of every moment!!! Enjoy the beautiful moments and make them memorable.
           </p>
