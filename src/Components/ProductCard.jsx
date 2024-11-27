@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ProductCard = ({ coffees }) => {
@@ -15,20 +16,6 @@ const ProductCard = ({ coffees }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        // fetch(`http://localhost:5000/coffees/${_id}`, {
-        //   mrthod: "DELETE",
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data);
-        //     if (data.deletedCount > 0) {
-        //       Swal.fire({
-        //         title: "Deleted!",
-        //         text: "Your Coffee has been deleted.",
-        //         icon: "success",
-        //       });
-        //     }
-        //   });
         fetch(`http://localhost:5000/coffees/${_id}`, {
           method: "DELETE",
           headers: {
@@ -37,6 +24,13 @@ const ProductCard = ({ coffees }) => {
         })
           .then((res) => res.json())
           .then((data) => console.log(data));
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your Coffee has been deleted.",
+            icon: "success",
+          });
+        }
       }
     });
   };
@@ -66,9 +60,14 @@ const ProductCard = ({ coffees }) => {
         <button className="btn join-item bg-[#D2B48C] text-white">
           <i class="fa-regular fa-eye"></i>
         </button>
-        <button className="btn join-item bg-[#3C393B] text-white">
-          <i class="fa-regular fa-pen-to-square"></i>
-        </button>
+        <Link
+          className="btn join-item bg-[#3C393B] text-white"
+          to={`/updateCoffee/${_id}`}
+        >
+          <button>
+            <i class="fa-regular fa-pen-to-square"></i>
+          </button>
+        </Link>
         <button
           onClick={() => handleDelete(_id)}
           className="btn join-item bg-[#EA4744] text-white"

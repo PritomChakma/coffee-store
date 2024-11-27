@@ -6,7 +6,7 @@ import icon4 from "../assets/icons/4.png";
 const Qualified = () => {
   return (
    <div className="bg-[#ECEAE3] ">
-     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-7 py-5 md:px-14 md:py-10  justify-center md:w-10/12 mx-auto">
+     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 px-7 py-5 md:px-14 md:py-10  justify-center md:w-10/12 mx-auto justify-center">
       {/* image */}
       <div >
         <img  src={icon1} alt="" />
