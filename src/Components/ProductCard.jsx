@@ -15,20 +15,28 @@ const ProductCard = ({ coffees }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
+        // fetch(`http://localhost:5000/coffees/${_id}`, {
+        //   mrthod: "DELETE",
+        // })
+        //   .then((res) => res.json())
+        //   .then((data) => {
+        //     console.log(data);
+        //     if (data.deletedCount > 0) {
+        //       Swal.fire({
+        //         title: "Deleted!",
+        //         text: "Your Coffee has been deleted.",
+        //         icon: "success",
+        //       });
+        //     }
+        //   });
         fetch(`http://localhost:5000/coffees/${_id}`, {
-          mrthod: "DELETE",
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
         })
           .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.deletedCount > 0) {
-              Swal.fire({
-                title: "Deleted!",
-                text: "Your Coffee has been deleted.",
-                icon: "success",
-              });
-            }
-          });
+          .then((data) => console.log(data));
       }
     });
   };
