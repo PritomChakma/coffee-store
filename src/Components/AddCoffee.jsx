@@ -113,7 +113,7 @@ const AddCoffee = () => {
         {/* photo url form */}
         <div class="form-control md:w-full px-2">
           <label className="label">
-            <span className="label-text font-semibold">Photo Url</span>
+            <span className="label-text font-semibold">Photo Url: Use imgbb</span>
           </label>
           <input
             type="text"

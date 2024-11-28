@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import ProductCard from "./ProductCard";
+import { useState } from "react";
 
-const Product = ({ coffee }) => {
-  return (
+const Product = ({ LoadCoffee }) => {
+  const [coffees, setCoffee]= useState(LoadCoffee)
+  return ( 
     <div>
       <div className="text-center">
         <h1 className="text-xl md:text-2xl text-[#331A15] font-bold">
@@ -17,8 +19,8 @@ const Product = ({ coffee }) => {
         {/* <h1>Hot hot coffee : {coffees.length}</h1> */}
 
         <div className="grid md:grid-cols-3 md:gap-5  md:w-11/12 mx-auto">
-          {coffee.map((coffees) => (
-            <ProductCard key={coffees._id} coffees={coffees}></ProductCard>
+          {coffees.map((coffee) => (
+            <ProductCard key={coffee._id} coffees={coffees} coffee={coffee} setCoffee={setCoffee}></ProductCard>
           ))}
         </div>
       </div>

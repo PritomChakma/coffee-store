@@ -5,13 +5,13 @@ import Product from "../Components/Product";
 import Qualified from "../Components/Qualified";
 
 const Home = () => {
-  const coffee = useLoaderData();
+  const LoadCoffee = useLoaderData();
   return (
     <div>
       <Banner></Banner>
       <Qualified></Qualified>
       <section className="mt-10">
-        <Product coffee={coffee}></Product>
+        <Product LoadCoffee={LoadCoffee}></Product>
       </section>
       <InstaPhoto></InstaPhoto>
     </div>
