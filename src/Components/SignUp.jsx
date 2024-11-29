@@ -14,7 +14,9 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        const newUser = { name, email };
+        const createdTime = result?.user?.metadata?.creationTime;
+
+        const newUser = { name, email, createdTime };
         // set new user on Database
         fetch("http://localhost:5000/users", {
           method: "POST",

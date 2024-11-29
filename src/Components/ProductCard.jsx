@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const ProductCard = ({ coffees, setCoffee, coffee }) => {
   const { _id, name, quantity, category, Price, photo } = coffee;
-console.log(coffee)
+// console.log(coffee)
   const handleDelete = (_id) => {
     console.log(_id);
     Swal.fire({
@@ -30,7 +30,7 @@ console.log(coffee)
                 text: "Your Coffee has been deleted.",
                 icon: "success",
               });
-              const remaining = coffee.filter((cof) => cof._id !== _id);
+              const remaining = coffees.filter((cof) => cof._id !== _id);
               setCoffee(remaining);
             }
           });
