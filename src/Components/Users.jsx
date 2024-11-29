@@ -23,7 +23,7 @@ const Users = () => {
           icon: "success",
         });
 
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://coffee-store-server-topaz-six.vercel.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -55,6 +55,7 @@ const Users = () => {
               <th>Name</th>
               <th>Email</th>
               <th>Create At</th>
+              <th>Last Login</th>
             </tr>
           </thead>
           <tbody>
@@ -65,6 +66,7 @@ const Users = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.createdTime}</td>
+                <td>{user.lastSignInTime}</td>
                 <td>
                   <button className="btn join-item bg-[#3C393B] text-white">
                     <i class="fa-regular fa-pen-to-square"></i>

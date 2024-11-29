@@ -5,7 +5,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 const SignUp = () => {
   const { createUser } = useContext(AuthContext);
 
-  const handlaLogin = (e) => {
+  const handleSignup = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -18,7 +18,7 @@ const SignUp = () => {
 
         const newUser = { name, email, createdTime };
         // set new user on Database
-        fetch("http://localhost:5000/users", {
+        fetch("https://coffee-store-server-topaz-six.vercel.app/users", {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -31,7 +31,7 @@ const SignUp = () => {
           });
       })
       .catch((error) => {
-        console.log("Error", error);
+        console.log("Error", error.message);
       });
   };
   return (
@@ -40,7 +40,7 @@ const SignUp = () => {
         <h2 className="font-semibold text-2xl text-center">
           SignUp an Account
         </h2>
-        <form onSubmit={handlaLogin} className="card-body">
+        <form onSubmit={handleSignup} className="card-body">
           <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
@@ -84,15 +84,15 @@ const SignUp = () => {
           </div>
           <div className="form-control mt-6">
             <button className="btn btn-neutral bg-[#E3B577] text-black font-bold">
-              Login
+              Signup
             </button>
           </div>
-          <div className="form-control ">
+          {/* <div className="form-control ">
             <button className="btn ">
               <span className="text-blue-500 font-bold text-lg"></span>
               Login with Google
             </button>
-          </div>
+          </div> */}
         </form>
         <p className="font-semibold text-center">
           Don’t Have An Account ?

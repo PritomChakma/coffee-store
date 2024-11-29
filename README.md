@@ -1,8 +1,16 @@
-# React + Vite
+# Coffee Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Coffee Store is a sleek and user-friendly e-commerce platform tailored for coffee lovers. This website allows users to explore a curated collection of coffee products, add their favorite items to the cart, and remove them effortlessly. With an intuitive interface and smooth user experience, Coffee Store makes online coffee shopping enjoyable and straightforward.
 
-Currently, two official plugins are available:
+# Live site Links: coffee-store-48e62.web.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Technologies Used
+
+1.Html
+2.css
+3.tailwind
+4.dasyui
+5.Node.js
+6.Express.js
+7.React
+8.MongoDB

@@ -22,27 +22,27 @@ const UpdateCoffee = () => {
       photo,
     };
     console.log(updatedCoffee);
-       // send data to the server
-       fetch(`http://localhost:5000/coffees/${_id}`, {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updatedCoffee),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.modifiedCount>0) {
-            Swal.fire({
-              title: "success!",
-              text: "Coffee added successfully",
-              icon: "success",
-              confirmButtonText: "Cool",
-            });
-          }
-        });
-      // form.reset();
+    // send data to the server
+    fetch(`https://coffee-store-server-topaz-six.vercel.app/coffees/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updatedCoffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "success!",
+            text: "Coffee added successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      });
+    // form.reset();
   };
 
   return (
@@ -121,7 +121,9 @@ const UpdateCoffee = () => {
         {/* photo url form */}
         <div class="form-control md:w-full px-2">
           <label className="label">
-            <span className="label-text font-semibold">Photo Url: Use imgbb</span>
+            <span className="label-text font-semibold">
+              Photo Url: Use imgbb
+            </span>
           </label>
           <input
             type="text"

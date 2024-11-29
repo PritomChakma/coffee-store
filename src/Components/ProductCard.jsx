@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 
 const ProductCard = ({ coffees, setCoffee, coffee }) => {
   const { _id, name, quantity, category, Price, photo } = coffee;
-// console.log(coffee)
+  // console.log(coffee)
   const handleDelete = (_id) => {
     console.log(_id);
     Swal.fire({
@@ -16,12 +16,15 @@ const ProductCard = ({ coffees, setCoffee, coffee }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coffees/${_id}`, {
-          method: "DELETE",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
+        fetch(
+          `https://coffee-store-server-topaz-six.vercel.app/coffees/${_id}`,
+          {
+            method: "DELETE",
+            headers: {
+              "content-Type": "application/json",
+            },
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
